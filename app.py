@@ -91,12 +91,14 @@ else:
             current_image = img
             caption = selected
 
-# ---- If no image yet, stop politely ----
-if current_image is None:
+# ---- Show image ----
+if current_image is None or not isinstance(current_image, np.ndarray):
+    st.error("Could not prepare the image. Try another file.")
     st.stop()
 
-# ---- Show image ----
-st.image(cv2.cvtColor(current_image, cv2.COLOR_BGR2RGB), caption=caption, use_container_width=True)
+# Streamlit can display BGR if we tell it:
+st.image(current_image, channels="BGR", caption=caption, use_container_width=True)
+
 
 # ---- Inference ----
 x = preprocess_image(current_image)         # -> (1,60,80,1) float32 in [0,1]
