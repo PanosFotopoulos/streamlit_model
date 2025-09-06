@@ -17,7 +17,7 @@ LABEL_DECODER_PATH = "label_decoder.json"
 IMAGE_DIR = "test"  # optional examples folder
 
 st.set_page_config(page_title="Pet Detector (.h5)", layout="wide")
-st.title("Pet Detector")
+st.title("Pet Detector1")
 st.write("Cat and dog binary classification (Keras .h5).")
 
 # ---- Helpers ----
