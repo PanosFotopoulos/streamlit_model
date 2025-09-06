@@ -96,7 +96,13 @@ if current_image is None or not isinstance(current_image, np.ndarray):
     st.error("Could not prepare the image. Try another file.")
     st.stop()
 
-# Streamlit can display BGR if we tell it:
+# Debug: confirm what we’re displaying
+st.sidebar.write(
+    f"img shape: {current_image.shape if current_image is not None else None}, "
+    f"dtype: {current_image.dtype if current_image is not None else None}"
+)
+
+# Display (BGR)
 st.image(current_image, channels="BGR", caption=caption, use_container_width=True)
 
 
