@@ -103,7 +103,7 @@ st.sidebar.write(
 )
 
 # Display (BGR)
-st.image(current_image, channels="BGR", caption=caption, use_container_width=True)
+st.image(current_image, channels="BGR", caption=caption, use_column_width=True)
 
 
 # ---- Inference ----
