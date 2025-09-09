@@ -56,7 +56,7 @@ except Exception as e:
 
 # ---- Random example image button ----
 if st.button("Select Random Image 🎲"):
-    if image_files:
+    if get_image_files:
         rnd = random.choice(get_image_files)
         st.session_state.selected_image = os.path.basename(rnd)
         st.session_state.use_example = True  # ensure we show the example even if an upload exists
