@@ -55,15 +55,15 @@ except Exception as e:
 
 
 # ---- Random example image button ----
+image_files = get_image_files(IMAGE_DIR)
+
 if st.button("Select Random Image 🎲"):
-    if get_image_files:
-        rnd = random.choice(get_image_files)
+    if image_files:
+        rnd = random.choice(image_files)  # list, not function
         st.session_state.selected_image = os.path.basename(rnd)
-        st.session_state.use_example = True  # ensure we show the example even if an upload exists
         st.rerun()
     else:
         st.warning("No images available to select randomly.")
-
 
 # ---- Choose image: uploader preferred, test/ fallback ----
 uploaded = st.file_uploader("Upload an image", type=["jpg","jpeg","png","bmp","webp"])
