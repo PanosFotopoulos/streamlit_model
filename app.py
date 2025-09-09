@@ -16,8 +16,8 @@ MODEL_PATH = "Sequential2_best_model.h5"
 LABEL_DECODER_PATH = "label_decoder.json"
 IMAGE_DIR = "test"  # optional examples folder
 
-st.set_page_config(page_title="Pet Detector (.h5)", layout="wide")
-st.title("Pet Detector")
+st.set_page_config(page_title="Pet Classifier (.h5)", layout="wide")
+st.title("Pet Classifier")
 st.write("Cat and dog binary classification (Keras .h5).")
 
 # ---- Helpers ----
