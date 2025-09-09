@@ -14,4 +14,4 @@ EXPOSE 8501
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD streamlit run app.py
+CMD ["bash","-lc","streamlit run app.py --server.address 0.0.0.0 --server.port ${PORT:-8501}"]
